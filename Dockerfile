@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM --platform=arm64 ubuntu:20.04
 
 RUN apt update && \
   apt install software-properties-common -y && \
