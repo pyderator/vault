@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM --platform=amd64 ubuntu:20.04
 
 RUN apt update && \
   apt install software-properties-common -y && \
@@ -6,7 +6,7 @@ RUN apt update && \
 
 RUN curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add -
 
-RUN apt-add-repository "deb [arch=arm64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+RUN apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 
 RUN apt update && \
   apt install vault -y
